@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Proedwin | Todo en Uno</title>
+<title>Proedwin AI | Todo en Uno</title>
 
 <style>
 
@@ -13,6 +13,10 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -25,6 +29,7 @@ body{
     min-height:100vh;
 }
 
+
 /* =========================
    HEADER
 ========================= */
@@ -32,23 +37,29 @@ body{
 header{
     position:sticky;
     top:0;
-    z-index:100;
-    background:rgba(2,8,18,.9);
+    z-index:1000;
+
+    background:rgba(2,8,18,.92);
+
     backdrop-filter:blur(15px);
+
     border-bottom:1px solid rgba(0,220,255,.15);
 }
 
 .nav{
     max-width:1200px;
     margin:auto;
-    padding:14px 25px;
+
+    padding:12px 22px;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
 
+
 /* =========================
-   LOGO PROEDWIN
+   LOGO
 ========================= */
 
 .logo{
@@ -57,12 +68,11 @@ header{
     gap:12px;
 }
 
-/* CIRCULO DEL LOGO */
-
 .logo-circle{
-    width:58px;
-    height:58px;
-    min-width:58px;
+    width:52px;
+    height:52px;
+    min-width:52px;
+
     border-radius:50%;
 
     display:flex;
@@ -74,52 +84,49 @@ header{
     background:
     radial-gradient(circle at 50% 45%,#123957,#020a14 70%);
 
-    border:3px solid #00e5ff;
+    border:2px solid #00e5ff;
 
     box-shadow:
     0 0 8px #00e5ff,
-    0 0 20px rgba(0,229,255,.7),
-    inset 0 0 20px rgba(0,229,255,.2);
+    0 0 20px rgba(0,229,255,.6),
+    inset 0 0 15px rgba(0,229,255,.2);
 }
-
-/* ANILLO */
 
 .logo-circle::before{
     content:"";
+
     position:absolute;
 
-    width:43px;
-    height:43px;
+    width:38px;
+    height:38px;
 
     border:1px dashed #00d9ff;
+
     border-radius:50%;
-
-    opacity:.8;
 }
-
-/* LETRA P */
 
 .logo-p{
     position:relative;
     z-index:2;
 
-    font-size:35px;
+    font-size:31px;
+
     font-weight:900;
+
     font-style:italic;
 
     color:#00e5ff;
 
     text-shadow:
     0 0 5px #00e5ff,
-    0 0 15px #008cff,
-    0 0 25px #008cff;
+    0 0 15px #008cff;
 }
 
-/* TEXTO */
-
 .logo-name{
-    font-size:27px;
+    font-size:24px;
+
     font-weight:900;
+
     letter-spacing:-1px;
 }
 
@@ -135,13 +142,15 @@ header{
 }
 
 .logo-tag{
-    margin-top:3px;
+    margin-top:2px;
 
-    font-size:8px;
-    letter-spacing:4px;
+    font-size:7px;
+
+    letter-spacing:3px;
 
     color:#7bdcff;
 }
+
 
 /* =========================
    MENU
@@ -149,14 +158,19 @@ header{
 
 .menu{
     display:flex;
-    gap:25px;
+
+    gap:22px;
 }
 
 .menu a{
     color:#ccecff;
+
     text-decoration:none;
+
     font-size:14px;
+
     font-weight:bold;
+
     transition:.3s;
 }
 
@@ -164,23 +178,27 @@ header{
     color:#00e5ff;
 }
 
+
 /* =========================
    HERO
 ========================= */
 
 .hero{
     max-width:1200px;
+
     margin:auto;
 
-    min-height:650px;
+    min-height:620px;
 
-    padding:80px 25px;
+    padding:70px 25px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 
-    gap:50px;
+    gap:40px;
 }
 
 .hero-text{
@@ -190,7 +208,7 @@ header{
 .badge{
     display:inline-block;
 
-    padding:9px 18px;
+    padding:8px 17px;
 
     border:1px solid rgba(0,229,255,.35);
 
@@ -200,19 +218,19 @@ header{
 
     background:rgba(0,229,255,.06);
 
-    font-size:13px;
+    font-size:12px;
 
-    margin-bottom:25px;
+    margin-bottom:22px;
 }
 
 h1{
-    font-size:clamp(45px,7vw,82px);
+    font-size:clamp(44px,7vw,78px);
 
     line-height:.95;
 
     letter-spacing:-4px;
 
-    margin-bottom:25px;
+    margin-bottom:24px;
 }
 
 h1 .blue{
@@ -232,29 +250,31 @@ h1 .gold{
 .hero p{
     color:#9fb9c9;
 
-    font-size:18px;
+    font-size:17px;
 
     line-height:1.7;
 
-    margin-bottom:30px;
+    margin-bottom:28px;
 }
 
 .buttons{
     display:flex;
-    gap:14px;
+
+    gap:12px;
+
     flex-wrap:wrap;
 }
 
 .button{
-    padding:14px 24px;
+    display:inline-block;
+
+    padding:13px 22px;
 
     border-radius:12px;
 
     text-decoration:none;
 
     font-weight:bold;
-
-    transition:.3s;
 }
 
 .primary{
@@ -267,13 +287,6 @@ h1 .gold{
     0 0 20px rgba(0,207,255,.25);
 }
 
-.primary:hover{
-    transform:translateY(-3px);
-
-    box-shadow:
-    0 0 35px rgba(0,207,255,.5);
-}
-
 .secondary{
     color:white;
 
@@ -282,29 +295,34 @@ h1 .gold{
     background:rgba(255,255,255,.04);
 }
 
+
 /* =========================
    LOGO GRANDE
 ========================= */
 
 .visual{
-    width:390px;
-    height:390px;
+    width:350px;
+    height:350px;
 
     position:relative;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 }
 
 .big-circle{
-    width:190px;
-    height:190px;
+    width:175px;
+    height:175px;
 
     border-radius:50%;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     background:
@@ -325,8 +343,8 @@ h1 .gold{
 
     position:absolute;
 
-    width:160px;
-    height:160px;
+    width:145px;
+    height:145px;
 
     border:1px dashed #00d9ff;
 
@@ -336,7 +354,7 @@ h1 .gold{
 }
 
 .big-p{
-    font-size:120px;
+    font-size:110px;
 
     font-weight:900;
 
@@ -358,15 +376,15 @@ h1 .gold{
 }
 
 .ring1{
-    width:290px;
-    height:290px;
+    width:280px;
+    height:280px;
 
     animation:rotate 14s linear infinite;
 }
 
 .ring2{
-    width:370px;
-    height:150px;
+    width:350px;
+    height:145px;
 
     transform:rotate(45deg);
 
@@ -374,8 +392,8 @@ h1 .gold{
 }
 
 .ring3{
-    width:370px;
-    height:150px;
+    width:350px;
+    height:145px;
 
     transform:rotate(-45deg);
 
@@ -418,39 +436,379 @@ h1 .gold{
 
 }
 
+
 /* =========================
-   SECCIONES
+   IA
+========================= */
+
+.ai-section{
+    max-width:1000px;
+
+    margin:auto;
+
+    padding:70px 20px;
+}
+
+.ai-title{
+    text-align:center;
+
+    margin-bottom:30px;
+}
+
+.ai-title h2{
+    font-size:42px;
+
+    margin-bottom:10px;
+}
+
+.ai-title h2 span{
+    color:#00e5ff;
+
+    text-shadow:
+    0 0 12px rgba(0,229,255,.4);
+}
+
+.ai-title p{
+    color:#91aaba;
+}
+
+
+/* =========================
+   CHAT
+========================= */
+
+.ai-box{
+
+    width:100%;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.07),
+        rgba(255,255,255,.015)
+    );
+
+    border:1px solid rgba(0,229,255,.2);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.35),
+    0 0 40px rgba(0,229,255,.08);
+}
+
+
+/* CHAT HEADER */
+
+.ai-header{
+
+    padding:18px 22px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:rgba(0,0,0,.25);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.ai-avatar{
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:23px;
+
+    background:
+    radial-gradient(circle,#123957,#020a14);
+
+    border:2px solid #00e5ff;
+
+    box-shadow:
+    0 0 12px rgba(0,229,255,.5);
+}
+
+.ai-name{
+    font-weight:bold;
+
+    font-size:18px;
+}
+
+.ai-online{
+    font-size:11px;
+
+    color:#50e6ff;
+
+    margin-top:3px;
+}
+
+
+/* MENSAJES */
+
+#chat-messages{
+
+    height:430px;
+
+    overflow-y:auto;
+
+    padding:22px;
+
+    scroll-behavior:smooth;
+}
+
+.message{
+
+    max-width:82%;
+
+    margin-bottom:16px;
+
+    padding:13px 16px;
+
+    border-radius:16px;
+
+    line-height:1.6;
+
+    font-size:15px;
+
+    word-wrap:break-word;
+}
+
+.message p{
+    margin:0;
+
+    white-space:pre-wrap;
+}
+
+.assistant-message{
+
+    margin-right:auto;
+
+    color:#e9faff;
+
+    background:
+    rgba(0,220,255,.07);
+
+    border:1px solid rgba(0,220,255,.14);
+}
+
+.user-message{
+
+    margin-left:auto;
+
+    color:white;
+
+    background:
+    linear-gradient(135deg,#087ee8,#0060c9);
+
+    box-shadow:
+    0 5px 20px rgba(0,100,220,.2);
+}
+
+
+/* TYPING */
+
+#typing-indicator{
+
+    display:none;
+
+    padding:0 22px 12px;
+
+    color:#72ddff;
+
+    font-size:13px;
+}
+
+#typing-indicator.visible{
+    display:block;
+}
+
+.dots{
+    display:inline-flex;
+
+    gap:4px;
+
+    margin-left:5px;
+}
+
+.dots span{
+
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    background:#00e5ff;
+
+    animation:typing 1s infinite;
+}
+
+.dots span:nth-child(2){
+    animation-delay:.2s;
+}
+
+.dots span:nth-child(3){
+    animation-delay:.4s;
+}
+
+@keyframes typing{
+
+    0%,100%{
+        opacity:.25;
+        transform:translateY(0);
+    }
+
+    50%{
+        opacity:1;
+        transform:translateY(-3px);
+    }
+
+}
+
+
+/* INPUT */
+
+.ai-input-area{
+
+    padding:15px;
+
+    display:flex;
+
+    gap:10px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    background:rgba(0,0,0,.2);
+}
+
+#user-input{
+
+    flex:1;
+
+    min-width:0;
+
+    resize:none;
+
+    max-height:130px;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    border:1px solid rgba(255,255,255,.14);
+
+    background:#07131f;
+
+    color:white;
+
+    outline:none;
+
+    font-family:Arial,Helvetica,sans-serif;
+
+    font-size:15px;
+}
+
+#user-input:focus{
+
+    border-color:#00d9ff;
+
+    box-shadow:
+    0 0 15px rgba(0,217,255,.1);
+}
+
+#send-button{
+
+    align-self:flex-end;
+
+    height:48px;
+
+    padding:0 20px;
+
+    border:0;
+
+    border-radius:12px;
+
+    background:
+    linear-gradient(135deg,#00cfff,#287cff);
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+#send-button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 0 25px rgba(0,207,255,.4);
+}
+
+#send-button:disabled{
+
+    opacity:.5;
+
+    cursor:not-allowed;
+
+    transform:none;
+}
+
+
+/* =========================
+   SERVICIOS
 ========================= */
 
 .section{
+
     max-width:1200px;
 
     margin:auto;
 
-    padding:80px 25px;
+    padding:70px 25px;
 }
 
 .title{
+
     text-align:center;
 
-    margin-bottom:45px;
+    margin-bottom:40px;
 }
 
 .title h2{
+
     font-size:38px;
 
     margin-bottom:10px;
 }
 
 .title span{
+
     color:#00e5ff;
 }
 
 .title p{
+
     color:#91aaba;
 }
 
 .cards{
+
     display:grid;
 
     grid-template-columns:
@@ -460,17 +818,18 @@ h1 .gold{
 }
 
 .card{
-    padding:30px;
 
-    min-height:190px;
+    padding:28px;
+
+    min-height:180px;
 
     border-radius:18px;
 
     background:
     linear-gradient(
-    145deg,
-    rgba(255,255,255,.07),
-    rgba(255,255,255,.015)
+        145deg,
+        rgba(255,255,255,.07),
+        rgba(255,255,255,.015)
     );
 
     border:1px solid rgba(255,255,255,.09);
@@ -479,25 +838,26 @@ h1 .gold{
 }
 
 .card:hover{
-    transform:translateY(-7px);
+
+    transform:translateY(-6px);
 
     border-color:rgba(0,229,255,.4);
-
-    box-shadow:
-    0 15px 40px rgba(0,0,0,.3);
 }
 
 .icon{
+
     font-size:30px;
 
-    margin-bottom:18px;
+    margin-bottom:15px;
 }
 
 .card h3{
-    margin-bottom:10px;
+
+    margin-bottom:9px;
 }
 
 .card p{
+
     color:#91aaba;
 
     line-height:1.6;
@@ -505,16 +865,18 @@ h1 .gold{
     font-size:14px;
 }
 
+
 /* =========================
    CTA
 ========================= */
 
 .cta{
+
     max-width:950px;
 
-    margin:50px auto 90px;
+    margin:40px auto 80px;
 
-    padding:60px 25px;
+    padding:55px 25px;
 
     text-align:center;
 
@@ -524,29 +886,33 @@ h1 .gold{
 
     background:
     radial-gradient(
-    circle,
-    rgba(0,229,255,.12),
-    transparent 65%
+        circle,
+        rgba(0,229,255,.12),
+        transparent 65%
     );
 }
 
 .cta h2{
+
     font-size:38px;
 
     margin-bottom:15px;
 }
 
 .cta p{
+
     color:#9db4c4;
 
     margin-bottom:25px;
 }
+
 
 /* =========================
    FOOTER
 ========================= */
 
 footer{
+
     text-align:center;
 
     padding:35px 20px;
@@ -562,9 +928,10 @@ footer strong{
     color:#00e5ff;
 }
 
-footer .gold{
+.gold{
     color:#ffd447;
 }
+
 
 /* =========================
    MOVIL
@@ -577,49 +944,118 @@ footer .gold{
     }
 
     .hero{
+
         flex-direction:column;
 
         text-align:center;
 
-        padding-top:60px;
+        padding-top:55px;
     }
 
     .hero-text{
+
         margin:auto;
     }
 
     .buttons{
+
         justify-content:center;
     }
 
     .visual{
-        width:320px;
-        height:320px;
+
+        width:300px;
+        height:300px;
     }
 
     .big-circle{
-        width:155px;
-        height:155px;
-    }
 
-    .big-circle::before{
-        width:130px;
-        height:130px;
+        width:150px;
+        height:150px;
     }
 
     .big-p{
-        font-size:95px;
+
+        font-size:92px;
     }
 
     .ring1{
-        width:245px;
-        height:245px;
+
+        width:240px;
+        height:240px;
     }
 
     .ring2,
     .ring3{
-        width:310px;
-        height:125px;
+
+        width:295px;
+        height:120px;
+    }
+
+    .message{
+
+        max-width:90%;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .logo-name{
+        font-size:20px;
+    }
+
+    .logo-circle{
+        width:46px;
+        height:46px;
+        min-width:46px;
+    }
+
+    .logo-p{
+        font-size:27px;
+    }
+
+    .logo-tag{
+        font-size:6px;
+    }
+
+    .hero{
+
+        padding-left:16px;
+        padding-right:16px;
+    }
+
+    h1{
+
+        letter-spacing:-2px;
+    }
+
+    .ai-section{
+
+        padding-left:10px;
+        padding-right:10px;
+    }
+
+    .ai-title h2{
+
+        font-size:32px;
+    }
+
+    #chat-messages{
+
+        height:420px;
+
+        padding:15px;
+    }
+
+    .ai-input-area{
+
+        padding:10px;
+    }
+
+    #send-button{
+
+        padding:0 14px;
     }
 
 }
@@ -627,10 +1063,12 @@ footer .gold{
 </style>
 </head>
 
+
 <body>
 
+
 <!-- =========================
-     CABECERA
+     HEADER
 ========================= -->
 
 <header>
@@ -661,9 +1099,12 @@ TODO EN UNO
 
 </div>
 
+
 <nav class="menu">
 
 <a href="#inicio">Inicio</a>
+
+<a href="#ia">Proedwin AI</a>
 
 <a href="#servicios">Servicios</a>
 
@@ -678,8 +1119,9 @@ TODO EN UNO
 </header>
 
 
+
 <!-- =========================
-     INICIO
+     HERO
 ========================= -->
 
 <section class="hero" id="inicio">
@@ -693,6 +1135,7 @@ TODO EN UNO
 <h1>
 
 Todo lo que necesitas
+
 <br>
 
 en <span class="blue">un solo</span>
@@ -704,26 +1147,24 @@ en <span class="blue">un solo</span>
 
 Bienvenido a Proedwin. Una plataforma digital moderna
 donde puedes encontrar herramientas, recursos,
-entretenimiento y mucho más.
+inteligencia artificial y mucho más.
 
 </p>
 
 <div class="buttons">
 
-<a href="#servicios" class="button primary">
+<a href="#ia" class="button primary">
+🤖 Probar Proedwin AI
+</a>
+
+<a href="#servicios" class="button secondary">
 Explorar Proedwin
 </a>
 
-<a href="#recursos" class="button secondary">
-Ver recursos
-</a>
-
 </div>
 
 </div>
 
-
-<!-- LOGO GRANDE -->
 
 <div class="visual">
 
@@ -746,6 +1187,107 @@ P
 </section>
 
 
+
+<!-- =========================
+     PROEDWIN AI
+========================= -->
+
+<section class="ai-section" id="ia">
+
+<div class="ai-title">
+
+<h2>
+🤖 <span>Proedwin AI</span>
+</h2>
+
+<p>
+Tu asistente inteligente impulsado por Cloudflare Workers AI.
+</p>
+
+</div>
+
+
+<div class="ai-box">
+
+
+<div class="ai-header">
+
+<div class="ai-avatar">
+P
+</div>
+
+<div>
+
+<div class="ai-name">
+Proedwin AI
+</div>
+
+<div class="ai-online">
+● Inteligencia artificial en línea
+</div>
+
+</div>
+
+</div>
+
+
+<!-- MENSAJES -->
+
+<div id="chat-messages">
+
+<div class="message assistant-message">
+
+<p>
+👋 Hola, soy <strong>Proedwin AI</strong>.
+<br><br>
+Estoy listo para ayudarte. ¿Qué quieres saber?
+</p>
+
+</div>
+
+</div>
+
+
+<!-- INDICADOR -->
+
+<div id="typing-indicator">
+
+Proedwin AI está pensando
+
+<span class="dots">
+
+<span></span>
+<span></span>
+<span></span>
+
+</span>
+
+</div>
+
+
+<!-- INPUT -->
+
+<div class="ai-input-area">
+
+<textarea
+id="user-input"
+rows="1"
+placeholder="Escribe tu pregunta..."
+></textarea>
+
+<button id="send-button">
+ENVIAR
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
 <!-- =========================
      SERVICIOS
 ========================= -->
@@ -764,7 +1306,9 @@ Herramientas y recursos para tu día a día.
 
 </div>
 
+
 <div class="cards">
+
 
 <div class="card">
 
@@ -773,11 +1317,12 @@ Herramientas y recursos para tu día a día.
 <h3>Inteligencia Artificial</h3>
 
 <p>
-Herramientas inteligentes para ayudarte
-a crear y trabajar.
+Habla con Proedwin AI y utiliza herramientas
+inteligentes desde un solo lugar.
 </p>
 
 </div>
+
 
 <div class="card">
 
@@ -792,6 +1337,7 @@ de utilizar.
 
 </div>
 
+
 <div class="card">
 
 <div class="icon">📚</div>
@@ -805,6 +1351,7 @@ en un solo lugar.
 
 </div>
 
+
 <div class="card">
 
 <div class="icon">🎮</div>
@@ -817,9 +1364,11 @@ Música, vídeos, juegos y mucho más.
 
 </div>
 
+
 </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -840,7 +1389,9 @@ Una experiencia digital sencilla y moderna.
 
 </div>
 
+
 <div class="cards">
+
 
 <div class="card">
 
@@ -855,6 +1406,7 @@ fluida y rápida.
 
 </div>
 
+
 <div class="card">
 
 <div class="icon">🔒</div>
@@ -867,6 +1419,7 @@ fácilmente lo que necesitas.
 </p>
 
 </div>
+
 
 <div class="card">
 
@@ -881,6 +1434,7 @@ teléfono y tablet.
 
 </div>
 
+
 <div class="card">
 
 <div class="icon">🚀</div>
@@ -894,9 +1448,11 @@ nuevas funciones.
 
 </div>
 
+
 </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -913,30 +1469,45 @@ Bienvenido a <span class="gold">Proedwin</span>
 Tu tecnología. Tus recursos. Todo en un solo lugar.
 </p>
 
-<a href="#inicio" class="button primary">
-Comenzar
+<a href="#ia" class="button primary">
+Probar Proedwin AI
 </a>
 
 </section>
 
 
+
 <!-- =========================
-     PIE DE PÁGINA
+     FOOTER
 ========================= -->
 
 <footer>
 
 <p>
-© 2026 <strong>Proedwin</strong>. Todos los derechos reservados.
+
+© 2026 <strong>Proedwin</strong>.
+Todos los derechos reservados.
+
 </p>
 
 <p style="margin-top:8px;">
-Forjado por <strong>Edwin Santos HN</strong> ·
+
+Forjado por
+<strong>Edwin Santos HN</strong>
+·
 <span class="gold">Honduras</span>
+
 </p>
 
 </footer>
 
+
+
+<!-- =========================
+     CHAT.JS
+========================= -->
+
+<script src="/chat.js"></script>
+
 </body>
 </html>
-    
